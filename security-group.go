@@ -13,7 +13,7 @@ func createSecurityGroup(ctx *pulumi.Context, vpcId pulumi.IDOutput) (pulumi.IDO
 			&ec2.SecurityGroupIngressArgs{
 				Description: pulumi.String("All from VPC"),
 				FromPort:    pulumi.Int(0),
-				ToPort:      pulumi.Int(0),
+				ToPort:      pulumi.Int(65535),
 				Protocol:    pulumi.String("tcp"),
 				CidrBlocks: pulumi.StringArray{
 					pulumi.String("0.0.0.0/0"),

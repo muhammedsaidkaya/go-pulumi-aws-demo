@@ -42,7 +42,7 @@ func main() {
 			return keyErr
 		}
 
-		_, ec2Err := createInstance(ctx, sgId, keyId)
+		_, ec2Err := createInstance(ctx, subnetId, sgId, keyId)
 		if ec2Err != nil {
 			return ec2Err
 		}

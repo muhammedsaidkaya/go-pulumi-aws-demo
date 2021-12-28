@@ -5,7 +5,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-func createInstance(ctx *pulumi.Context, sgId pulumi.IDOutput, keyId pulumi.IDOutput) (pulumi.IDOutput, error) {
+func createInstance(ctx *pulumi.Context, subnetId pulumi.IDOutput, sgId pulumi.IDOutput, keyId pulumi.IDOutput) (pulumi.IDOutput, error) {
 	instance, err := ec2.NewInstance(ctx, "web", &ec2.InstanceArgs{
 		Ami: pulumi.String("ami-0686851c4e7b1a8e1"),
 		//ami-0f81e6e71078b75b6 ubuntu 20.04
@@ -15,7 +15,8 @@ func createInstance(ctx *pulumi.Context, sgId pulumi.IDOutput, keyId pulumi.IDOu
 		VpcSecurityGroupIds: pulumi.StringArray{
 			sgId,
 		},
-		KeyName: keyId,
+		KeyName:  keyId,
+		SubnetId: subnetId,
 		Tags: pulumi.StringMap{
 			"Name":          pulumi.String("muhammed-pulumi-instance"),
 			"Desired-State": pulumi.String("Ignore"),

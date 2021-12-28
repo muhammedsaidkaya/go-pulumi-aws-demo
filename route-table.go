@@ -10,12 +10,12 @@ func createRouteTable(ctx *pulumi.Context, vpcId pulumi.IDOutput, igId pulumi.ID
 		VpcId: vpcId,
 		Routes: ec2.RouteTableRouteArray{
 			&ec2.RouteTableRouteArgs{
-				CidrBlock: pulumi.String("10.0.1.0/24"),
+				CidrBlock: pulumi.String("0.0.0.0/0"),
 				GatewayId: igId,
 			},
 			&ec2.RouteTableRouteArgs{
-				Ipv6CidrBlock:       pulumi.String("::/0"),
-				EgressOnlyGatewayId: igId,
+				Ipv6CidrBlock: pulumi.String("::/0"),
+				GatewayId:     igId,
 			},
 		},
 		Tags: pulumi.StringMap{
