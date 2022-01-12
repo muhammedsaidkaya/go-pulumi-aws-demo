@@ -34,4 +34,4 @@ Get Pythondaki , LookUp Go daki fonksiyonlar ile veriler çekilebiliyor.
 * [Pulumi vs Terraform: Which One Should You Use?](https://phoenixnap.com/blog/pulumi-vs-terraform)
 * [Pulumi vs Terraform](https://www.abar.tech/articles/pulumi-vs-terraform/)
 * [Terraform to Pulumi - Migration](https://www.pulumi.com/docs/guides/adopting/from_terraform/#converting-terraform-hcl-to-pulumi)
-
+* [Pulumi Resource Names](https://www.pulumi.com/docs/troubleshooting/faq/#why-do-resource-names-have-random-hex-character-suffixes)
